@@ -3,6 +3,7 @@
 ## 0. 视频地址
 
 [视频教程](https://www.bilibili.com/video/av93813318)
+
 [以下是一位同学 angenin十一 做的视频对应的博客，有详细的教程哦， 抱歉，这里暂时引用，如果angenin十一您觉得不合适在此处引用，我会及时删除!! ]()
 
 [SpringCloud入门学习笔记（1-4基础入门，创建项目） ](https://blog.csdn.net/qq_36903261/article/details/106507150)
