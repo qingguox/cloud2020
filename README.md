@@ -4,6 +4,30 @@
 
 [视频教程](https://www.bilibili.com/video/av93813318)
 
+[以下是一位同学 angenin十一 做的视频对应的博客，有详细的教程哦， 抱歉，这里暂时引用，如果angenin十一您觉得不合适在此处引用，我会及时删除!! ]()
+
+[SpringCloud入门学习笔记（1-4基础入门，创建项目） ](https://blog.csdn.net/qq_36903261/article/details/106507150)
+
+[SpringCloud入门学习笔记（8-9初级部分，服务调用【Ribbon与OpenFeign】）](https://blog.csdn.net/qq_36903261/article/details/106590923)
+
+[SpringCloud入门学习笔记（10初级部分，断路器【Hystrix】）](https://blog.csdn.net/qq_36903261/article/details/106614077)
+
+[SpringCloud入门学习笔记（11-12初级部分，网关【Gateway】）](https://blog.csdn.net/qq_36903261/article/details/106635918)
+
+[SpringCloud入门学习笔记（13-14初级部分，服务配置【Config】与消息总线【Bus】）](https://blog.csdn.net/qq_36903261/article/details/106814648)
+
+[SpringCloud入门学习笔记（15-16初级部分，消息驱动【Stream】与分布式请求链路追踪【Sleuth】）](https://blog.csdn.net/qq_36903261/article/details/106834598)
+
+[SpringCloud入门学习笔记（17-18高级部分，服务注册和配置中心【Nacos】）](https://blog.csdn.net/qq_36903261/article/details/106835279)
+
+[SpringCloud入门学习笔记（19高级部分，熔断与限流【Sentinel】）](https://blog.csdn.net/qq_36903261/article/details/106899215)
+
+[SpringCloud入门学习笔记（20高级部分，处理分布式事务【Seata】）](https://blog.csdn.net/qq_36903261/article/details/107009285)
+
+[SpringCloud入门学习笔记（21高级部分，雪花算法【snowflake】）](https://blog.csdn.net/qq_36903261/article/details/107045717)
+
+
+
 ## 1. 笔记
 1) doc目录
 
