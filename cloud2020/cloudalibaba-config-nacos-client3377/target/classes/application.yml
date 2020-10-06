@@ -1,0 +1,6 @@
+spring:
+    profiles:
+        active: dev
+        #active: info
+
+#  此client需要从  注册中心 拿去那个文件    nacos-config-client-dev.yaml
