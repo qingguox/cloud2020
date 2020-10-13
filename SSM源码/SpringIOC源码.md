@@ -12,11 +12,11 @@ Spring 最重要的概念就是 IOC 和 AOP，本文章适合于有一定的Spri
 - [引言](#引言)
 - [BeanFactory简介](#BeanFactory简介)
 - [启动过程分析](#启动过程分析)	
-	- [1. 创建 Bean 容器前的准备工作](#1-Bean 容器前的准备工作)			
-	- [2. 创建 Bean 容器，加载并注册 Bean](#2-Bean 容器，加载并注册 Bean)	
+	- [1. 创建Bean容器前的准备工作](#1-Bean 容器前的准备工作)			
+	- [2. 创建Bean容器,加载并注册 Bean](#2-Bean 容器，加载并注册 Bean)	
 		- [2.1 BeanDefinition接口定义](#2-1-BeanDefinition接口定义)	
 		- [2.2 customizeBeanFactory](#2-2-customizeBeanFactory)	
-		- [2.3 加载 Bean: loadBeanDefinitions](#2-3-loadBeanDefinitions)	
+		- [2.3 加载 Bean:loadBeanDefinitions](#2-3-loadBeanDefinitions)	
 			- [2.3.1 doRegisterBeanDefinitions：](#2-3-1-doRegisterBeanDefinitions)	
 			- [2.3.2 processBeanDefinition](#2-3-2-processBeanDefinition)	
 			- [2.3.3 注册 Bean](#2-3-3-注册Bean)	
@@ -29,17 +29,22 @@ Spring 最重要的概念就是 IOC 和 AOP，本文章适合于有一定的Spri
 			- [5.3.1 创建 Bean 实例](#5-3-1-创建Bean实例)	
 			- [5.3.2 bean 属性注入](#5-3-2-bean属性注入)	
 			- [5.3.3 initializeBean](#5-3-3-initializeBean)	
-		
-		
-		
-		
-    - [BeanFactory简介](#BeanFactory简介)
-        - [1.1. 说一说自己对于 synchronized 关键字的了解](#11-说一说自己对于-synchronized-关键字的了解)
-		
-	- [启动过程分析](#启动过程分析)	
-		
 
-
+- [附录](#附录)
+	- [id和name](#id和name)
+	- [配置是否允许Bean覆盖、是否允许循环依赖](#配置是否允许Bean覆盖、是否允许循环依赖)
+	- [profile](#profile)
+	- [工厂模式生成Bean](#工厂模式生成Bean)
+	- [FactoryBean](#FactoryBean)
+	- [初始化Bean的回调](#初始化Bean的回调)
+	- [销毁Bean的回调](#销毁Bean的回调)
+	- [ConversionService](#ConversionService)
+	- [Bean继承](#Bean继承)
+	- [方法注入](#方法注入)
+		- [lookup-method](#lookup-method)
+		- [replaced-method](#replaced-method)
+	- [BeanPostProcessor](#BeanPostProcessor)
+- [总结](#总结)
 
 
 
@@ -52,10 +57,72 @@ Spring 最重要的概念就是 IOC 和 AOP，本文章适合于有一定的Spri
 
 # 启动过程分析
 
+## 1-Bean 容器前的准备工作
+
+## 2-Bean 容器，加载并注册 Bean
+
+###
+ 
+###
+
+###
+
+####
+
+####
+
+####
+
+##
+
+##
+
+##
+
+###
+
+###
+
+###
+
+####
+
+####
+
+####
 
 
 
+	
+# 附录
+
+# id 和 name
+
+# 配置是否允许 Bean 覆盖、是否允许循环依赖
+
+# profile
+
+# 工厂模式生成Bean
+
+# FactoryBean
+
+# 初始化Bean的回调
+
+# 销毁Bean的回调
 
 
 
+# ConversionService
+
+# Bean继承
+
+# 方法注入
+
+## lookup-method
+
+## replaced-method
+
+# BeanPostProcessor		
+		
+# 总结
 
