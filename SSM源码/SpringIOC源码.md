@@ -51,49 +51,48 @@ Spring 最重要的概念就是 IOC 和 AOP，本文章适合于有一定的Spri
 # 引言
 先看下最基本的启动 Spring 容器的例子：
 
-> 
-	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationfile.xml");
-	}
-
+```javascript
+public static void main(String[] args) {
+	ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationfile.xml");
+}
+```
 以上代码就可以利用配置文件来启动一个 Spring 容器了，请使用 maven 的小伙伴直接在 dependencies 5.2.5中加上以下依赖即可，
 我比较反对那些不知道要添加什么依赖，然后把 Spring 的所有相关的东西都加进来的方式。
-
->
-	 <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>12</maven.compiler.source>
-        <maven.compiler.target>12</maven.compiler.target>
-        <junit.version>4.12</junit.version>
-        <lombok.version>1.18.10</lombok.version>
-        <log4j.version>1.2.17</log4j.version>
-        <mysql.version>8.0.18</mysql.version>
-        <druid.version>1.1.16</druid.version>
-        <mybatis.spring.boot.version>2.1.1</mybatis.spring.boot.version>
-    </properties>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-beans</artifactId>
-                <version>5.2.5.RELEASE</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-core</artifactId>
-                <version>5.2.5.RELEASE</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>5.2.5.RELEASE</version>
-            </dependency>
-            <dependency>
-                <groupId>cglib</groupId>
-                <artifactId>cglib</artifactId>
-                <version>2.2.2</version>
-            </dependency>
-        </dependencies>
-
+```javascript
+ <properties>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<maven.compiler.source>12</maven.compiler.source>
+	<maven.compiler.target>12</maven.compiler.target>
+	<junit.version>4.12</junit.version>
+	<lombok.version>1.18.10</lombok.version>
+	<log4j.version>1.2.17</log4j.version>
+	<mysql.version>8.0.18</mysql.version>
+	<druid.version>1.1.16</druid.version>
+	<mybatis.spring.boot.version>2.1.1</mybatis.spring.boot.version>
+</properties>
+<dependencies>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-beans</artifactId>
+		<version>5.2.5.RELEASE</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+		<version>5.2.5.RELEASE</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+		<version>5.2.5.RELEASE</version>
+	</dependency>
+	<dependency>
+		<groupId>cglib</groupId>
+		<artifactId>cglib</artifactId>
+		<version>2.2.2</version>
+	</dependency>
+</dependencies>
+```
 
 >
 	spring-context 会自动将 spring-core、spring-beans、spring-aop、spring-expression 这几个基础 jar 包带进来。
@@ -106,7 +105,8 @@ Spring 最重要的概念就是 IOC 和 AOP，本文章适合于有一定的Spri
 ![图片](https://img-blog.csdnimg.cn/20201013202125550.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNzczMDI2,size_16,color_FFFFFF,t_70#pic_center)
 
 >
-	读者可以大致看一下类名，源码分析的时候不至于找不着看哪个类，因为 Spring 为了适应各种使用场景，提供的各个接口都可能有很多的实现类。对于我们来说，就是揪着一个完整的分支看完。当然，读本文的时候读者也不必太担心，每个代码块分析的时候，我都会告诉读者我们在说哪个类第几行。
+	读者可以大致看一下类名，源码分析的时候不至于找不着看哪个类，因为 Spring 为了适应各种使用场景，提供的各个接口都可能有很多的实现类。对于我们来说，
+	就是揪着一个完整的分支看完。当然，读本文的时候读者也不必太担心，每个代码块分析的时候，我都会告诉读者我们在说哪个类第几行。
 
 我们可以看到，ClassPathXmlApplicationContext 兜兜转转了好久才到 ApplicationContext 接口，同样的，我们也可以使用绿颜色的 FileSystemXmlApplicationContext 和 AnnotationConfigApplicationContext 这两个类。
 
@@ -121,22 +121,22 @@ Spring 最重要的概念就是 IOC 和 AOP，本文章适合于有一定的Spri
 首先，定义一个类：
 
 ```javascript
-	public class Video {
-		private int id;
-		private String title;
-		public int getId() {
-			return id;
-		}
-		public void setId(int id) {
-			this.id = id;
-		}
-		public String getTitle() {
-			return title;
-		}
-		public void setTitle(String title) {
-			this.title = title;
-		}
+public class Video {
+	private int id;
+	private String title;
+	public int getId() {
+		return id;
 	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+}
 ```
 
 # BeanFactory简介
