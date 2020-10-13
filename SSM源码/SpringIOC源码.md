@@ -57,39 +57,39 @@ Spring 最重要的概念就是 IOC 和 AOP，本文章适合于有一定的Spri
 
 # 启动过程分析
 
-## 1-Bean 容器前的准备工作
+## 1-Bean容器前的准备工作
 
-## 2-Bean 容器，加载并注册 Bean
+## 2-Bean容器,加载并注册Bean
 
-###
+### 2-1-BeanDefinition接口定义
  
-###
+### 2-2-customizeBeanFactory
 
-###
+### 2-3-loadBeanDefinitions
 
-####
+#### 2-3-1-doRegisterBeanDefinitions
 
-####
+#### 2-3-2-processBeanDefinition
 
-####
+#### 2-3-3-注册Bean
 
-##
+## 3-Bean容器实例化完成后
 
-##
+## 4-准备Bean容器prepareBeanFactory
 
-##
+## 5-初始化所有的singleton-beans
 
-###
+### 5-1-启动过程分析
 
-###
+### 5-2-getBean
 
-###
+### 5-3-创建Bean
 
-####
+#### 5-3-1-创建Bean实例
 
-####
+#### 5-3-2-bean属性注入
 
-####
+#### 5-3-3-initializeBean
 
 
 
@@ -109,7 +109,6 @@ Spring 最重要的概念就是 IOC 和 AOP，本文章适合于有一定的Spri
 # 初始化Bean的回调
 
 # 销毁Bean的回调
-
 
 
 # ConversionService
