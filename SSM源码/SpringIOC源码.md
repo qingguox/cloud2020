@@ -49,6 +49,12 @@ Spring 最重要的概念就是 IOC 和 AOP，本文章适合于有一定的Spri
 
 
 # 引言
+先看下最基本的启动 Spring 容器的例子：
+
+> 
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationfile.xml");
+	}
 
 
 # BeanFactory简介
