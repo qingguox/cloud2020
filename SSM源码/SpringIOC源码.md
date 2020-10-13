@@ -22,7 +22,7 @@ Spring 最重要的概念就是 IOC 和 AOP，本文章适合于有一定的Spri
 			- [2.3.3 注册 Bean](#2-3-3-注册Bean)				
 	- [3. Bean容器实例化完成后](#3-Bean容器实例化完成后)			
 	- [4. 准备Bean容器:prepareBeanFactory](#4-准备Bean容器prepareBeanFactory)		
-	- [5. 初始化所有的singleton-beans](#5-初始化所有的singleton beans)		
+	- [5. 初始化所有的singleton-beans](#5-初始化所有的singleton-beans)		
 		- [5.1 preInstantiateSingletons](#5-1-启动过程分析)			
 		- [5.2 getBean](#5-2-getBean)			
 		- [5.3 创建Bean](#5-3-创建Bean)	
