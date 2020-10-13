@@ -784,36 +784,35 @@ protected void parseBeanDefinitions(Element root, BeanDefinitionParserDelegate d
 parseDefaultElement(ele, delegate) 代表解析的节点是 <import />、<alias />、<bean />、<beans /> 这几个
 
 >
-这里的四个标签之所以是 default 的，是因为它们是处于这个 namespace 下定义的：
-http://www.springframework.org/schema/beans
-又到初学者科普时间，不熟悉 namespace 的读者请看下面贴出来的 xml，这里的第二行 xmlns 就是咯。
 
-<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	   xmlns="http://www.springframework.org/schema/beans"
-	   xsi:schemaLocation="
-			http://www.springframework.org/schema/beans
-		  http://www.springframework.org/schema/beans/spring-beans.xsd"
-	   default-autowire="byName">
-而对于其他的标签，将进入到 delegate.parseCustomElement(element) 这个分支。如我们经常会使用到的 <mvc />、<task />、<context />、<aop />等。
+	这里的四个标签之所以是 default 的，是因为它们是处于这个 namespace 下定义的：
+	http://www.springframework.org/schema/beans
+	又到初学者科普时间，不熟悉 namespace 的读者请看下面贴出来的 xml，这里的第二行 xmlns 就是咯。
+	<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		   xmlns="http://www.springframework.org/schema/beans"
+		   xsi:schemaLocation="
+				http://www.springframework.org/schema/beans
+			  http://www.springframework.org/schema/beans/spring-beans.xsd"
+		   default-autowire="byName">
+	而对于其他的标签，将进入到 delegate.parseCustomElement(element) 这个分支。如我们经常会使用到的 <mvc />、<task />、<context />、<aop />等。
+	这些属于扩展，如果需要使用上面这些 ”非 default“ 标签，那么上面的 xml 头部的地方也要引入相应的 namespace 和 .xsd 文件的路径，如下所示。同时代码中需要提供相应的 parser 来解析，如 MvcNamespaceHandler、TaskNamespaceHandler、ContextNamespaceHandler、AopNamespaceHandler 等。
 
-这些属于扩展，如果需要使用上面这些 ”非 default“ 标签，那么上面的 xml 头部的地方也要引入相应的 namespace 和 .xsd 文件的路径，如下所示。同时代码中需要提供相应的 parser 来解析，如 MvcNamespaceHandler、TaskNamespaceHandler、ContextNamespaceHandler、AopNamespaceHandler 等。
+	假如读者想分析 <context:property-placeholder location="classpath:xx.properties" /> 的实现原理，就应该到 ContextNamespaceHandler 中找答案。
 
-假如读者想分析 <context:property-placeholder location="classpath:xx.properties" /> 的实现原理，就应该到 ContextNamespaceHandler 中找答案。
-
-<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	  xmlns="http://www.springframework.org/schema/beans"
-	  xmlns:context="http://www.springframework.org/schema/context"
-	  xmlns:mvc="http://www.springframework.org/schema/mvc"
-	  xsi:schemaLocation="
-		   http://www.springframework.org/schema/beans 
-		   http://www.springframework.org/schema/beans/spring-beans.xsd
-		   http://www.springframework.org/schema/context
-		   http://www.springframework.org/schema/context/spring-context.xsd
-		   http://www.springframework.org/schema/mvc   
-		   http://www.springframework.org/schema/mvc/spring-mvc.xsd  
-	   "
-	  default-autowire="byName">
-同理，以后你要是碰到 <dubbo /> 这种标签，那么就应该搜一搜是不是有 DubboNamespaceHandler 这个处理类。
+	<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		  xmlns="http://www.springframework.org/schema/beans"
+		  xmlns:context="http://www.springframework.org/schema/context"
+		  xmlns:mvc="http://www.springframework.org/schema/mvc"
+		  xsi:schemaLocation="
+			   http://www.springframework.org/schema/beans 
+			   http://www.springframework.org/schema/beans/spring-beans.xsd
+			   http://www.springframework.org/schema/context
+			   http://www.springframework.org/schema/context/spring-context.xsd
+			   http://www.springframework.org/schema/mvc   
+			   http://www.springframework.org/schema/mvc/spring-mvc.xsd  
+		   "
+		  default-autowire="byName">
+	同理，以后你要是碰到 <dubbo /> 这种标签，那么就应该搜一搜是不是有 DubboNamespaceHandler 这个处理类。
 
 
 回过神来，看看处理 default 标签的方法：
