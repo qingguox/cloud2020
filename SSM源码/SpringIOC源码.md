@@ -104,8 +104,7 @@ public static void main(String[] args) {
 
 ![图片](https://img-blog.csdnimg.cn/20201013202125550.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxNzczMDI2,size_16,color_FFFFFF,t_70#pic_center)
 
->
-	读者可以大致看一下类名，源码分析的时候不至于找不着看哪个类，因为 Spring 为了适应各种使用场景，提供的各个接口都可能有很多的实现类。对于我们来说，
+>读者可以大致看一下类名，源码分析的时候不至于找不着看哪个类，因为 Spring 为了适应各种使用场景，提供的各个接口都可能有很多的实现类。对于我们来说，
 	就是揪着一个完整的分支看完。当然，读本文的时候读者也不必太担心，每个代码块分析的时候，我都会告诉读者我们在说哪个类第几行。
 
 我们可以看到，ClassPathXmlApplicationContext 兜兜转转了好久才到 ApplicationContext 接口，同样的，我们也可以使用绿颜色的 FileSystemXmlApplicationContext 和 AnnotationConfigApplicationContext 这两个类。
@@ -525,12 +524,10 @@ public interface BeanDefinition extends AttributeAccessor, BeanMetadataElement {
 }
 ```
 
->
-这个 BeanDefinition 其实已经包含很多的信息了，暂时不清楚所有的方法对应什么东西没关系，希望看完本文后读者
+>这个 BeanDefinition 其实已经包含很多的信息了，暂时不清楚所有的方法对应什么东西没关系，希望看完本文后读者
 可以彻底搞清楚里面的所有东西。
 
->
-这里接口虽然那么多，但是没有类似 getInstance() 这种方法来获取我们定义的类的实例，真正的我们定义的类生成的实例到哪里去了呢？别着急，这个要很后面才能讲到。
+>这里接口虽然那么多，但是没有类似 getInstance() 这种方法来获取我们定义的类的实例，真正的我们定义的类生成的实例到哪里去了呢？别着急，这个要很后面才能讲到。
 
 有了 BeanDefinition 的概念以后，我们再往下看 refreshBeanFactory() 方法中的剩余部分：
 ```javascript
@@ -783,9 +780,7 @@ protected void parseBeanDefinitions(Element root, BeanDefinitionParserDelegate d
 
 parseDefaultElement(ele, delegate) 代表解析的节点是 <import />、<alias />、<bean />、<beans /> 这几个
 
->
-
-	这里的四个标签之所以是 default 的，是因为它们是处于这个 namespace 下定义的：
+>这里的四个标签之所以是 default 的，是因为它们是处于这个 namespace 下定义的：
 	http://www.springframework.org/schema/beans
 	
 	又到初学者科普时间，不熟悉 namespace 的读者请看下面贴出来的 xml，这里的第二行 xmlns 就是咯。
@@ -2359,8 +2354,7 @@ Spring 会在这几个地方寻找 spring.profiles.active 的属性值：操作�
 ```javascript
 -Dspring.profiles.active="profile1,profile2"
 ```
->
-	profile 可以激活多个
+>profile 可以激活多个
 
 当然，我们也可以通过代码的形式从 Environment 中设置 profile：
 
@@ -2722,8 +2716,7 @@ public abstract class CommandManager {
 }
 ```
 
->
-	注意，既然用了注解，要配置注解扫描：<context:component-scan base-package="com.javadoop" />'
+>注意，既然用了注解，要配置注解扫描：<context:component-scan base-package="com.javadoop" />'
 	
 甚至，我们可以像下面这样：
 
@@ -2741,8 +2734,7 @@ public abstract class CommandManager {
 }
 ```
 
->
-	上面的返回值用了 MyCommand，当然，如果 Command 只有一个实现类，那返回值也可以写 Command。
+>上面的返回值用了 MyCommand，当然，如果 Command 只有一个实现类，那返回值也可以写 Command。
 
 
 ## replaced-method
@@ -2783,8 +2775,7 @@ public class ReplacementComputeValue implements org.springframework.beans.factor
 <bean id="replacementComputeValue" class="a.b.c.ReplacementComputeValue"/>
 ```
 
->
-	arg-type 明显不是必须的，除非存在方法重载，这样必须通过参数类型列表来判断这里要覆盖哪个方法。
+>arg-type 明显不是必须的，除非存在方法重载，这样必须通过参数类型列表来判断这里要覆盖哪个方法。
 	
 # BeanPostProcessor		
 
