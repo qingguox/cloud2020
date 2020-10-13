@@ -12,15 +12,15 @@ Spring 最重要的概念就是 IOC 和 AOP，本文章适合于有一定的Spri
 - [引言](#引言)
 - [BeanFactory简介](#BeanFactory简介)
 - [启动过程分析](#启动过程分析)	
-	- [1. 创建Bean容器前的准备工作](#1-Bean 容器前的准备工作)	
+	- [1. 创建Bean容器前的准备工作](#1-Bean容器前的准备工作)	
 	
-	- [2. 创建Bean容器,加载并注册 Bean](#2-Bean 容器，加载并注册 Bean)	
+	- [2. 创建Bean容器,加载并注册Bean](#2-Bean容器,加载并注册Bean)	
 	
 		- [2.1 BeanDefinition接口定义](#2-1-BeanDefinition接口定义)	
 		
 		- [2.2 customizeBeanFactory](#2-2-customizeBeanFactory)	
 		
-		- [2.3 加载 Bean:loadBeanDefinitions](#2-3-loadBeanDefinitions)	
+		- [2.3 加载Bean:loadBeanDefinitions](#2-3-loadBeanDefinitions)	
 		
 			- [2.3.1 doRegisterBeanDefinitions：](#2-3-1-doRegisterBeanDefinitions)	
 			
@@ -30,7 +30,7 @@ Spring 最重要的概念就是 IOC 和 AOP，本文章适合于有一定的Spri
 			
 	- [3. Bean容器实例化完成后](#3-Bean容器实例化完成后)		
 	
-	- [4. 准备Bean容器:prepareBeanFactory](#4-准备Bean容器:prepareBeanFactory)	
+	- [4. 准备Bean容器:prepareBeanFactory](#4-准备Bean容器prepareBeanFactory)	
 	
 	- [5. 初始化所有的singleton beans](#5-初始化所有的singleton beans)	
 	
