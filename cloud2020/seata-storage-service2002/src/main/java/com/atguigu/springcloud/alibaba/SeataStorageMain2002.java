@@ -12,6 +12,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 public class SeataStorageMain2002 {
 
     public static void main(String[] args) {
-        SpringApplication.run(SeataStorageMain2002.class,args);
+        SpringApplication.run(SeataStorageMain2002.class, args);
     }
 }

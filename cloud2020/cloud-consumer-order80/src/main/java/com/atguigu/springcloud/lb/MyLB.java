@@ -4,6 +4,7 @@ import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -34,7 +35,7 @@ public class MyLB implements LoadBalancer {
     @Override
     public ServiceInstance instances(List<ServiceInstance> serviceInstances) {
         // 在服务列表中的下标
-        int index  =  getAndIncrement() % serviceInstances.size();
+        int index = getAndIncrement() % serviceInstances.size();
         return serviceInstances.get(index);
     }
 }

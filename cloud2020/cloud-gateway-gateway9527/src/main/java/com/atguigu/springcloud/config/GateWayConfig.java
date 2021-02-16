@@ -1,4 +1,4 @@
- 
+
 package com.atguigu.springcloud.config;
 
 import org.springframework.cloud.gateway.route.RouteLocator;
@@ -11,8 +11,6 @@ public class GateWayConfig {
 
     /**
      * 另外一种方式  ，， 配置类  配置路由    路由到 百度新闻 国内
-     * @param routeLocatorBuilder
-     * @return
      */
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder routeLocatorBuilder) {

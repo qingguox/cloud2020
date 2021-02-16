@@ -14,7 +14,7 @@ public class CommonResult<T> {
     private T data; //泛型，对应类型的json数据
 
     //自定义两个参数的构造方法
-    public CommonResult(Integer code, String message){
+    public CommonResult(Integer code, String message) {
         this(code, message, null);
     }
 }

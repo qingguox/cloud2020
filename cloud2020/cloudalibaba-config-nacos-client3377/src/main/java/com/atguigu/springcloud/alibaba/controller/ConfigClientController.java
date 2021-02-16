@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RefreshScope                   // 动态刷新
-public class ConfigClientController
-{
+public class ConfigClientController {
     @Value("${config.info}")
     private String configInfo;
 

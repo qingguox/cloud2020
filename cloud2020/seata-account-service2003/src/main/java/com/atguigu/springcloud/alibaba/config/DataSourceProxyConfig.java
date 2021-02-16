@@ -1,7 +1,9 @@
 package com.atguigu.springcloud.alibaba.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
+
 import io.seata.rm.datasource.DataSourceProxy;
+
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.beans.factory.annotation.Value;

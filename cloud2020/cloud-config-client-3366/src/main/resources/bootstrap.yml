@@ -1,28 +1,28 @@
 server:
-    port: 3366
+  port: 3366
 
 spring:
-    application:
-        name: config-client
-    cloud:
-        config:
-            label: master
-            name: config
-            profile: dev
-            uri: http://localhost:3344
-    rabbitmq:
-        host: 192.168.25.50
-        port: 5672
-        username: guest
-        password: guest
+  application:
+    name: config-client
+  cloud:
+    config:
+      label: master
+      name: config
+      profile: dev
+      uri: http://localhost:3344
+  rabbitmq:
+    host: 192.168.25.50
+    port: 5672
+    username: guest
+    password: guest
 
 eureka:
-    client:
-        service-url:
-            defaultZone: http://eureka7001.com:7001/eureka
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
 
 management:
-    endpoints:
-        web:
-            exposure:
-                include: "*"
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -22,6 +22,6 @@ public class ReceiveMessageListenerController {
 
     @StreamListener(Sink.INPUT)                  // 消息监听器
     public void input(Message<String> message) {
-        System.out.println("消费者1号，------> 接受到的消息是:  "+ message.getPayload() + "\t  端口为: " +serverPort);
+        System.out.println("消费者1号，------> 接受到的消息是:  " + message.getPayload() + "\t  端口为: " + serverPort);
     }
 }

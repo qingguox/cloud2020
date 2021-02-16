@@ -10,7 +10,8 @@
 
     <!--  增  -->
     <!--  Payment标红了不用管，因为我们已经在yml文件中指定了Payment的位置了  -->
-    <insert id="create" parameterType="com.atguigu.springcloud.entities.Payment" useGeneratedKeys="true" keyProperty="id">
+    <insert id="create" parameterType="com.atguigu.springcloud.entities.Payment" useGeneratedKeys="true"
+            keyProperty="id">
         insert into payment(serial)values(#{serial});
     </insert>
 

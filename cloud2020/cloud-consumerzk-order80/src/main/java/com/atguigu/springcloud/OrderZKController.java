@@ -1,6 +1,7 @@
 package com.atguigu.springcloud;
 
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -17,7 +18,7 @@ public class OrderZKController {
     private RestTemplate restTemplate;
 
     @RequestMapping("/consumer/payment/zk")
-    public String paymentInfo(){
+    public String paymentInfo() {
         String result = restTemplate.getForObject(INVOKE_URL + "/payment/zk", String.class);
         return result;
     }

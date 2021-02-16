@@ -5,8 +5,10 @@ import com.atguigu.springcloud.alibaba.domain.Order;
 import com.atguigu.springcloud.alibaba.service.AccountService;
 import com.atguigu.springcloud.alibaba.service.OrderService;
 import com.atguigu.springcloud.alibaba.service.StorageService;
+
 import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

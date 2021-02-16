@@ -3,6 +3,7 @@ package com.atguigu.springcloud.alibaba.service;
 import com.atguigu.springcloud.entities.CommonResult;
 import com.atguigu.springcloud.entities.Payment;
 import com.google.common.annotations.GwtCompatible;
+
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,9 +13,9 @@ import org.springframework.stereotype.Component;
  * @create: 2020-10-04 15:24
  **/
 @Component
-public class PaymentFallbackService implements PaymentService{
+public class PaymentFallbackService implements PaymentService {
     @Override
     public CommonResult<Payment> paymentSQL(Long id) {
-        return new CommonResult<>(44444,"服务降级返回,---PaymentFallbackService",new Payment(id,"errorSerial"));
+        return new CommonResult<>(44444, "服务降级返回,---PaymentFallbackService", new Payment(id, "errorSerial"));
     }
 }
